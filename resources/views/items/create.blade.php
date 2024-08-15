@@ -10,16 +10,16 @@
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input type="text" class="form-control" id="brand" name="brand" value="Unknown">
+        </div>
+        <div class="mb-3">
             <label for="quantity" class="form-label">Quantity</label>
             <input type="number" class="form-control" id="quantity" name="quantity" required>
         </div>
         <div class="mb-3">
             <label for="status" class="form-label">Status</label>
             <input type="text" class="form-control" id="status" name="status" value="Unknown">
-        </div>
-        <div class="mb-3">
-            <label for="brand" class="form-label">Brand</label>
-            <input type="text" class="form-control" id="brand" name="brand" value="Unknown">
         </div>
         <button type="submit" class="btn btn-success">Add Item</button>
     </form>
