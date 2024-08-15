@@ -18,9 +18,14 @@
             <label for="quantity" class="form-label">Quantity</label>
             <input type="number" class="form-control" id="quantity" name="quantity" value="{{ $item->quantity }}" required>
         </div>
-        <div class="mb-3">
-            <label for="status" class="form-label">Status</label>
-            <input type="text" class="form-control" id="status" name="status" value="{{ $item->status }}">
+        <div class="form-group mb-3">
+            <label for="status">Status:</label>
+            <select name="status" id="status" class="form-control">
+                <option value="" {{ $item->status === null ? 'selected' : '' }}>Unknown</option>
+                <option value="broken" {{ $item->status === 'broken' ? 'selected' : '' }}>Broken</option>
+                <option value="used" {{ $item->status === 'used' ? 'selected' : '' }}>Used</option>
+                <option value="fresh" {{ $item->status === 'fresh' ? 'selected' : '' }}>Fresh</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Update Item</button>
     </form>

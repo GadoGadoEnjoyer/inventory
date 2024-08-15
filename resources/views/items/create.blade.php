@@ -17,9 +17,14 @@
             <label for="quantity" class="form-label">Quantity</label>
             <input type="number" class="form-control" id="quantity" name="quantity" required>
         </div>
-        <div class="mb-3">
-            <label for="status" class="form-label">Status</label>
-            <input type="text" class="form-control" id="status" name="status" value="Unknown">
+        <div class="form-group mb-3">
+            <label for="status">Status:</label>
+            <select name="status" id="status" class="form-control">
+                <option value="" selected>Unknown</option>
+                <option value="broken">Broken</option>
+                <option value="used">Used</option>
+                <option value="fresh">Fresh</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-success">Add Item</button>
     </form>

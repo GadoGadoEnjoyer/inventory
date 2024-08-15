@@ -30,6 +30,9 @@
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
+                <td>
+                    <a href="{{ route('items.adjust', $item->id) }}" class="btn btn-warning">Adjust Quantity</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

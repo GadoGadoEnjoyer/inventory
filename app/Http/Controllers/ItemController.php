@@ -52,4 +52,32 @@ class ItemController extends Controller
     }
 
 
+    //GePeTo code again, idk
+    public function showAdjustForm(Item $item)
+    {
+        return view('items.adjust', compact('item'));
+    }
+
+    // Handle the quantity adjustment
+    public function adjustQuantity(Request $request, Item $item)
+    {
+        $request->validate([
+            'amount' => 'required|integer',
+        ]);
+
+        $amount = $request->input('amount');
+
+        if ($amount < 0 && ($item->quantity + $amount) < 0) {
+            return back()->withErrors([
+                'amount' => 'Not enough items in stock to complete this operation.',
+            ]);
+        }
+
+        $item->quantity += $amount;
+        $item->save();
+
+        return redirect()->route('items.index')->with('success', 'Quantity updated successfully.');
+    }
+
+
 }

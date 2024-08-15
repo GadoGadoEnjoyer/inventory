@@ -21,6 +21,10 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/items/{item}/adjust', [ItemController::class, 'showAdjustForm'])->name('items.adjust');
+Route::post('/items/{item}/adjust', [ItemController::class, 'adjustQuantity'])->name('items.adjustQuantity');
+
+
 Route::middleware('auth.custom')->group(function () {
     Route::resource('items', ItemController::class);
 });
