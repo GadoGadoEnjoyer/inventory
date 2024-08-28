@@ -1,5 +1,5 @@
-A shrimple web app for inventory
-How to install it to your machine
+A shrimple web app for inventory \n
+How to install it to your machine \n
 0. Get PHP and commmposer on your local machine
 1. Git clone it
 2. Create the database "inventory" on your local machine
